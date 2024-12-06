@@ -1,0 +1,149 @@
+<!-- 
+  Author: Eric Paiz
+  Created: September 2024
+  Description: Registration and Login pages for Student Housing Locator
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Housing Locator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container, .registration-container {
+            background-color: #fff;
+            max-width: 360px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #999;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .branding {
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #000;
+            text-align: center;
+        }
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .registration-container, .login-container {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                padding: 10px;
+            }
+            input {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="branding">Student Housing Locator</div>
+            <h1>Login</h1>
+            <p>Enter your credentials to access your account</p>
+            <form id="login-form" method="POST" action="http://127.0.0.1:5000/login">
+                <input type="email" class="form-control" name="email" id="login-email" placeholder="Email" required>
+                <input type="password" class="form-control" name="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn btn-dark btn-block">Login</button>
+            </form>
+            <a href="pwd.html">Forgot Password?</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Add logic to save data to local storage or send it to the backend here
+            alert("Registration successful!");
+        });
+
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Placeholder login logic to check if the user is authenticated
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            // Mock user validation - Replace this with actual database logic
+            if (email === "hello@HousingStudentLocator.com" && password === "Password1!") {
+                alert("Login successful!");
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

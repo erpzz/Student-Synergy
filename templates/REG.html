@@ -1,0 +1,182 @@
+<!-- 
+  Author: Eric Paiz
+  Created: September 2024
+  Description: Registration and Login pages for Student Housing Locator
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Housing Locator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container, .registration-container {
+            background-color: #fff;
+            max-width: 360px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #999;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .branding {
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 24px;
+            color: #007bff;
+            text-align: center;
+        }
+        .alert {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .registration-container, .login-container {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                padding: 10px;
+            }
+            input {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="registration-container">
+        <div class="branding">Student Housing Locator</div>
+        <h1>Create an Account</h1>
+        <p>Please fill in the details below to register</p>
+        <form id="registration-form" method="POST" action="/register">
+            <input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name" required>
+            <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name" required>
+            <input type="email" class="form-control" name="email" id="email" placeholder="hello@HousingStudentLocator.com" required>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+            <input type="password" class="form-control" name="confirm_password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit" class="btn btn-dark btn-block">Register</button>
+        </form>
+        
+        <a href="login.html">Already have an account? Log in here</a>
+    </div>
+
+    <div id="message" class="alert" style="display: none;"></div> <!-- Added to show error or success messages -->
+
+    <!-- JavaScript at the end of the body -->
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                showMessage("Passwords do not match!", "alert-danger");
+                return;
+            }
+
+            // Serialize the form data
+            const formData = new FormData(event.target);
+
+            // Send a POST request to register the user
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.status === 400) {
+                    const text = await response.json();
+                    showMessage(text.error, "alert-danger");
+                } else if (response.ok) {
+                    showMessage("Registration successful! Redirecting to login...", "alert-success");
+                    setTimeout(() => {
+                        window.location.href = "/"; // Redirect to login page after success
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                showMessage("An error occurred during registration.", "alert-danger");
+            }
+        });
+
+        function showMessage(message, type) {
+            const messageBox = document.getElementById("message");
+            messageBox.className = `alert ${type}`;
+            messageBox.textContent = message;
+            messageBox.style.display = "block";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
