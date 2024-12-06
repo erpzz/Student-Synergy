@@ -1,9 +1,9 @@
 # Student Synergy - Affordable Housing Locator for Students
 
-**Lead Developer**: Eric Paiz (Lead Developer, Database Architect, Documentation)  
-**Lead Designer & Developer**: Ligia Cerna (Lead Designer, Developer, Testing, Integration Needed)  
-**Database Developer, System Design**: Karla Cardenas (Database Developer, SQL Code)  
-**Communications Expert, Systems Design, Documentation**: Scott Balzer  
+**Lead Developer**: Eric Paiz (Lead Developer, Database Architect, Documentation)
+**Lead Designer & Developer**: Ligia Cerna (Lead Designer, Developer, Testing, Integration Needed)
+**Database Developer & System Design**: Karla Cardenas (Database Developer, SQL Code)
+**Communications Expert & Systems Design, Documentation**: Scott Balzer
 
 ## Overview
 This project, **Student Synergy - Affordable Housing Locator for Students**, was originally developed as part of a class assignment to help students locate affordable housing near their campuses. It addresses the challenges faced by students in urban or high-demand areas by offering a platform that helps them find housing options within their budget, connect with potential roommates, and understand tenant rights and responsibilities. The current iteration of the project includes functional user registration, login, and search features, while several features still need to be built out to make the project fully functional. Our GitHub repository can be found here: [Student Synergy on GitHub](https://github.com/erpzz/Student-Synergy).
@@ -25,7 +25,7 @@ Develop a user-friendly platform to:
 
 ## Team Contributions
 - **Eric Paiz**: Responsible for the overall development, including database architecture and writing documentation. Created registration, login, and preference matcher mockups, as well as registration form code. Designed the database and coordinated integration between different modules.
-- **Ligia Cerna**: Contributed to design, testing, and development. Developed user cases, created test plans, ensured the quality and usability of the system, and contributed code that still needs integration into the main repository.
+- **Ligia Cerna**: Contributed to design, testing, and development. Developed user cases, created test plans, ensured the quality and usability of the system, and contributed code that still needs integration into the main repository. Ligia was also one of the primary developers, focusing on creating cohesive user experiences.
 - **Karla Cardenas**: Worked on database development and system design, focusing particularly on the SQL code for database tables and activity diagrams. Although her SQL code is not currently included in this repository, it was submitted separately to our professor and may be integrated in the near future.
 - **Scott Balzer**: Focused on communications, system design, and documentation. He also handled the logical system structure.
 
