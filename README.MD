@@ -97,14 +97,11 @@ The wireframes provide a visual guide for the main screens, including:
 - **Notifications**: Implement notifications to alert students of new listings or roommate requests.
 - **Secure Payment Integration**: Allow for secure online payments for deposits.
 - **Ratings & Reviews**: Enable users to rate properties and provide reviews to help other students.
+- **Integrating Full Code-Base**: Currently we only have portions of the codebase on this repo, but plan to integrate Ligia's code as well.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Attribution
-Special thanks to:
-- **Professor [Name]** for guidance and feedback during the project.
-- **Open-source contributors** for providing tools and libraries used in the project.
 
 ## Contact
 For questions, suggestions, or collaborations, please reach out via GitHub at [@erpzz](https://github.com/erpzz).
