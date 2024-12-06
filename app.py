@@ -1,3 +1,6 @@
+# Lead Developer: Eric Paiz (Lead Developer, Database Architect, Documentation) Ligia Cerna (Lead Designer & Developer, Testing), Karla Cardenas (Database Developer, System Design), Scott Balzer (Communications expert, Systems Design, Documentation)
+
+
 from flask import Flask, request, render_template, redirect, url_for, jsonify
 import json
 import os
