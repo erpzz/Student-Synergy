@@ -1,6 +1,6 @@
 # Student Synergy - Affordable Housing Locator for Students
 
-" **Lead Developer**: Eric Paiz (Lead Developer, Database Architect, Documentation)  
+**Lead Developer**: Eric Paiz (Lead Developer, Database Architect, Documentation)  
 **Lead Designer & Developer**: Ligia Cerna (Developer, Testing, Integration Needed)  
 **Database Developer, System Design**: Karla Cardenas (Database Developer, SQL Code)  
 **Communications Expert, Systems Design, Documentation**: Scott Balzer  
@@ -111,4 +111,4 @@ Special thanks to:
 For questions, suggestions, or collaborations, please reach out via GitHub at [@erpzz](https://github.com/erpzz).
 
 We hope this project helps students find housing more easily and contributes to a more comfortable college experience.
-"
+
